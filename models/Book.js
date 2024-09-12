@@ -12,6 +12,10 @@ const bookSchema = new Schema({
         required: true,
         type: String,
     },
+    quantity: {
+        type: Number,
+        required: true,
+    },
     description: {
         required: true,
         type: String,
@@ -19,12 +23,8 @@ const bookSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    },
-    quantitiy: {
-        type: Number,
-        required: true,
     }
-})
+});
 
 const Book = mongoose.model('Book', bookSchema);
 

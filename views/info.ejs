@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kitap Arama</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<%-	include("partials/_navigator") -%>
+
+<div class="container">
+    <h1>Kitap Ara</h1>
+    <form method="post" action="/getBook">
+        <input type="text" name="bul" placeholder="Kitap Adı veya Yazar">
+        <button type="submit">Ara</button>
+    </form>
+    <% if(typeof book !== 'undefined' && book !== null) { %>
+    <div class="info-card" id="results">
+        <ul class="info-ul">
+            <li><h3>Kitap ismi:</h3> <%= book.title %></li>
+            <li><h3>Kitap ismi:</h3> <%= book.author %></li>
+            <li><h3>Kitap ismi:</h3> <%= book.description %></li>
+        </ul>
+    </div>
+    <% } %>
+</div>
+</body>
+</html>
